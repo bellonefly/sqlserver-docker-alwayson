@@ -24,6 +24,10 @@ COPY ${CERTFILE_PWD} ./certificate
 #RUN chown mssql:mssql /usr/certificate/dbm_certificate.cer
 
 
+# 給權限
+USER root
+
+
 # Enable availability groups
 RUN /opt/mssql/bin/mssql-conf set hadr.hadrenabled 1
 
