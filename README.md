@@ -132,19 +132,19 @@ The image used at https://hub.docker.com/r/enriquecatala/sql2017_alwayson_node/ 
 ```sql
 USE master
 GO
-CREATE LOGIN dbm_login WITH PASSWORD = 'Pa$$w0rd';
+CREATE LOGIN dbm_login WITH PASSWORD = 'Sk2v$ds32KSOcv$sd';
 CREATE USER dbm_user FOR LOGIN dbm_login;
 GO
 -- create certificate
 --
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Pa$$w0rd';
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Sk2v$ds32KSOcv$sd';
 go
 CREATE CERTIFICATE dbm_certificate WITH SUBJECT = 'dbm';
 BACKUP CERTIFICATE dbm_certificate
-TO FILE = 'd:\borrame\dbm_certificate.cer'
+TO FILE = '/usr/certificate/dbm_certificate.cer'
 WITH PRIVATE KEY (
-        FILE = 'd:\borrame\dbm_certificate.pvk',
-        ENCRYPTION BY PASSWORD = 'Pa$$w0rd'
+        FILE = '/usr/certificate/dbm_certificate.cer',
+        ENCRYPTION BY PASSWORD = 'Sk2v$ds32KSOcv$sd'
     );
 GO
 ```
@@ -166,12 +166,12 @@ docker run -p 14333:1433 -it sql2017_alwayson_node
 4. Connect to the 127.0.0.1,14333 and create the following login with certificate to be able to create the AO without cluster
 
 ```sql
-CREATE LOGIN dbm_login WITH PASSWORD = 'Pa$$w0rd';
+CREATE LOGIN dbm_login WITH PASSWORD = 'Sk2v$ds32KSOcv$sd';
 CREATE USER dbm_user FOR LOGIN dbm_login;
 GO
 -- create master key encryption required to securely store the certificate
 --
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Pa$$w0rd';
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Sk2v$ds32KSOcv$sd';
 GO
 -- import certificate with authorization to dbm_user
 CREATE CERTIFICATE dbm_certificate   
@@ -179,7 +179,7 @@ CREATE CERTIFICATE dbm_certificate
     FROM FILE = '/usr/certificate/dbm_certificate.cer'
     WITH PRIVATE KEY (
     FILE = '/usr/certificate/dbm_certificate.pvk',
-    DECRYPTION BY PASSWORD = 'Pa$$w0rd'
+    DECRYPTION BY PASSWORD = 'Sk2v$ds32KSOcv$sd'
 )
 GO
 -- Create the endpoint

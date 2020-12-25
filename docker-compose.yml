@@ -45,7 +45,7 @@ services:
     domainname:
         enriquecatala.com
     volumes:
-      - mssql-server-linux-datadb2:/var/opt/mssql/data/sqlNode3
+      - mssql-server-linux-datadb3:/var/opt/mssql/data/sqlNode3
     environment:
       MSSQL_SA_PASSWORD: "PaSSw0rd"
       ACCEPT_EULA: "Y"
