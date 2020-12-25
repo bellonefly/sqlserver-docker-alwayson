@@ -11,9 +11,9 @@ services:
     domainname:
       labl.local
     extra_hosts:
-      sqlNode1.labl.local: "172.20.0.2"      
-      sqlNode2.labl.local: "172.20.0.3"
-      sqlNode3.labl.local: "172.20.0.4"
+      sqlNode1.labl.local: "10.10.101.147"
+      sqlNode2.labl.local: "10.10.101.147"
+      sqlNode3.labl.local: "10.10.101.148"
     volumes:
       - mssql-server-linux-datadb1:/var/opt/mssql/data/sqlNode1
     environment:
@@ -22,8 +22,8 @@ services:
     ports:
       - "14331:1433"
       - "15021:5022"
-    networks:
-      - internal
+    # networks:
+      # - internal
 
   db2:
     container_name: sqlNode2
@@ -35,9 +35,9 @@ services:
     domainname:
       labl.local
     extra_hosts:
-      sqlNode1.labl.local: "172.20.0.2"      
-      sqlNode2.labl.local: "172.20.0.3"
-      sqlNode3.labl.local: "172.20.0.4"
+      sqlNode1.labl.local: "10.10.101.147"
+      sqlNode2.labl.local: "10.10.101.147"
+      sqlNode3.labl.local: "10.10.101.148"
     volumes:
       - mssql-server-linux-datadb2:/var/opt/mssql/data/sqlNode2
     environment:
@@ -46,8 +46,8 @@ services:
     ports:
       - "14332:1433"
       - "15022:5022"
-    networks:
-      - internal
+    # networks:
+      # - internal
       
   db3:
     container_name: sqlNode3
@@ -59,9 +59,9 @@ services:
     domainname:
       labl.local
     extra_hosts:
-      sqlNode1.labl.local: "172.20.0.2"      
-      sqlNode2.labl.local: "172.20.0.3"
-      sqlNode3.labl.local: "172.20.0.4"
+      sqlNode1.labl.local: "10.10.101.147"
+      sqlNode2.labl.local: "10.10.101.147"
+      sqlNode3.labl.local: "10.10.101.148"
     volumes:
       - mssql-server-linux-datadb3:/var/opt/mssql/data/sqlNode3
     environment:
@@ -70,13 +70,13 @@ services:
     ports:
       - "14333:1433"
       - "15023:5022"
-    networks:
-      - internal
+    # networks:
+      # - internal
 
 volumes:
   mssql-server-linux-datadb1:
   mssql-server-linux-datadb2:
   mssql-server-linux-datadb3:
   
-networks:
-  internal:
+# networks:
+  # internal:

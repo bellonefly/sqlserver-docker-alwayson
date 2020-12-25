@@ -3,6 +3,12 @@ EXPOSE 1433
 EXPOSE 5022
 
 
+RUN apt-get update
+RUN apt-get install vim -y
+RUN apt-get install telnet -y
+RUN apt-get install iputils-ping -y
+
+
 ENV ACCEPT_EULA=Y
 ENV SA_PASSWORD="PaSSw0rd"
 ENV MSSQL_PID=Developer
