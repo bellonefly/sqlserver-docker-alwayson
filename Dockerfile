@@ -3,6 +3,10 @@ EXPOSE 1433
 EXPOSE 5022
 
 
+# 給權限
+USER root
+
+
 RUN apt-get update
 RUN apt-get install vim -y
 RUN apt-get install telnet -y
@@ -28,10 +32,6 @@ COPY ${CERTFILE_PWD} ./certificate
 # Set permissions (if you are using docker with windows, you don´t need to do this)
 #RUN chown mssql:mssql /usr/certificate/dbm_certificate.pvk
 #RUN chown mssql:mssql /usr/certificate/dbm_certificate.cer
-
-
-# 給權限
-USER root
 
 
 # Enable availability groups
