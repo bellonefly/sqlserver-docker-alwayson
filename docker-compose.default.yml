@@ -22,7 +22,6 @@ services:
     ports:
       - "14331:1433"
       - "15021:5022"
-      - "2224:2224"
     # networks:
       # - internal
 
@@ -47,7 +46,6 @@ services:
     ports:
       - "14332:1433"
       - "15022:5022"
-      - "2224:2224"
     # networks:
       # - internal
       
@@ -72,7 +70,6 @@ services:
     ports:
       - "14333:1433"
       - "15023:5022"
-      - "2224:2224"
     # networks:
       # - internal
 
