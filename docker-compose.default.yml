@@ -20,8 +20,8 @@ services:
       MSSQL_SA_PASSWORD: "PaSSw0rd"
       ACCEPT_EULA: "Y"
     ports:
-      - "14331:1433"
-      - "15021:5022"
+      - "1433:1433"
+      - "5022:5022"
     # networks:
       # - internal
 
@@ -68,8 +68,8 @@ services:
       MSSQL_SA_PASSWORD: "PaSSw0rd"
       ACCEPT_EULA: "Y"
     ports:
-      - "14333:1433"
-      - "15023:5022"
+      - "1433:1433"
+      - "5022:5022"
     # networks:
       # - internal
 
