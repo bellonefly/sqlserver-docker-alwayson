@@ -1,6 +1,9 @@
 ﻿FROM mcr.microsoft.com/mssql/server:2019-latest
 EXPOSE 1433
 EXPOSE 5022
+EXPOSE 3121
+EXPOSE 21064
+EXPOSE 5405
 
 
 # 給權限
